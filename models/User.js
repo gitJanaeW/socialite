@@ -15,6 +15,11 @@ const UserSchema = new Schema (
             trim: true,
             match: [/.+\@.+\..+/] // is email
         },
+        // password: {
+        //     type: String,
+        //     required: 'Password not inputted',
+        //     match: [/^.{8,15}$/] // is between 8-15 chars
+        // },
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
@@ -31,8 +36,7 @@ const UserSchema = new Schema (
     {
         toJSON: {
             virtuals: true
-        },
-        id: false
+        }
     }
 );
 
