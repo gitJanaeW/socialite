@@ -69,7 +69,7 @@ const thoughtControllers = {
     removeReply(req, res) {
         Thought.findOneAndUpdate(
             {_id: req.params.thoughtId},
-            {$pull: {replies: req.params.replyId}},
+            { $pull: { replies: { replyId: req.params.replyId} }},
             {new: true}
         )
         .then(data => {
